@@ -103,7 +103,6 @@ html{
 .navbar a.buy-btn:hover,
 .navbar a.buy-btn:focus-visible{
   color: var(--color-white);
-  text-decoration: none;
 }
 .navbar a.buy-btn::after{
   display: none;
@@ -149,6 +148,16 @@ html{
   height: 2px;
   border-radius: 10px;
   background: var(--color-espresso);
+  transition: background-color 0.2s ease;
+}
+.navbar.open .menu-toggle,
+.navbar.open .menu-toggle:hover,
+.navbar.open .menu-toggle:focus-visible {
+  border-color: var(--color-terracotta);
+  background-color: var(--color-terracotta);
+}
+.navbar.open .menu-toggle span {
+  background-color: var(--color-white);
 }
 .Hero-content{
   flex: 1 1 55%;
