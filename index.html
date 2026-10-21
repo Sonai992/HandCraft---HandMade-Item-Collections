@@ -5,68 +5,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Handcraft</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    
 </head>
 <body>
-    <div class="Landing-Page">
+    <div class="navbar" id="mainNav">
+        <div class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#product">Products</a>
+            <a href="#buy">Buy</a>
+            <a href="#about">About</a>
+        </div>
+        <a class="buy-btn" href="#buy">Buy Now</a>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    <div class="Landing-Page" id="home">    
         <div class="Hero-content">
-            <h1 class="Title head-Color">Get Your Collective Items <br> Make The Day Specail.</h1>
+            <h1 class="Title head-Color" id=" ">Get Your Collective Items <br> Make The Day Specail.</h1>
             <h3 class="Tagline head-Color">Hand Made product with organic items <br>brings your teditional look more asthetic and bright</h3>
             <button>Explore</button>
         </div>
         <div class="Head-baground" aria-hidden="true"></div>
     </div>
     <div class="items">
-        <p class="our-product">Our Products</p>
+        <p class="our-product" id="product">Our Products</p>
         <h2 class="item-title">Explore Our Collections </h2>
         <p class="para">From home essentials to unique gifts,<br> find something special
             in our carefully curated collection.</p>
+        <form class="checkout-form" id="checkout-form">
         <div class="product">
             <div class="products">
                 <div class="demoimg">
                     <img src="assets/accessories.jpg" alt="Handwoven straw tote bag">
+                    <span class="price-tag">From ₹299</span>
                 </div>
                 <div class="demopara">
                     <h3>Handwoven Accessories</h3>
                     <p>Everyday bags and accessories, carefully woven by hand.</p>
+                    <label class="product-select">
+                        <input type="checkbox" name="products" value="Handwoven Accessories" data-price="299">
+                        <span>Select this collection</span>
+                    </label>
                 </div>
             </div>
             <div class="products">
                 <div class="demoimg">
                     <img src="assets/gifts.jpg" alt="Handmade gift wrapped with twine">
+                    <span class="price-tag">From ₹299</span>
                 </div>
                 <div class="demopara">
                     <h3>Thoughtful Gifts</h3>
                     <p>Personal, handmade finds ready to make someone's day.</p>
+                    <label class="product-select">
+                        <input type="checkbox" name="products" value="Thoughtful Gifts" data-price="299">
+                        <span>Select this collection</span>
+                    </label>
                 </div>
             </div>
             <div class="products">
                 <div class="demoimg">
                     <img src="assets/home-decor.jpg" alt="Wooden trays and plant decor">
+                    <span class="price-tag">From ₹299</span>
                 </div>
                 <div class="demopara">
                     <h3>Home Decor</h3>
                     <p>Natural accents that bring warmth and character to your home.</p>
+                    <label class="product-select">
+                        <input type="checkbox" name="products" value="Home Decor" data-price="299">
+                        <span>Select this collection</span>
+                    </label>
                 </div>
             </div>
             <div class="products">
                 <div class="demoimg">
                     <img src="assets/kitchen.jpg" alt="Handmade ceramic mug">
+                    <span class="price-tag">From ₹299</span>
                 </div>
                 <div class="demopara">
                     <h3>Kitchen & Dining</h3>
                     <p>Handcrafted essentials for slow mornings and shared meals.</p>
+                    <label class="product-select">
+                        <input type="checkbox" name="products" value="Kitchen & Dining" data-price="299">
+                        <span>Select this collection</span>
+                    </label>
                 </div>
             </div>
             <div class="products">
                 <div class="demoimg">
                     <img src="assets/lifestyle.jpg" alt="Hand-poured candle with a small plant">
+                    <span class="price-tag">From ₹299</span>
                 </div>
                 <div class="demopara">
                     <h3>Lifestyle</h3>
                     <p>Small-batch pieces made to add a little calm to your day.</p>
+                    <label class="product-select">
+                        <input type="checkbox" name="products" value="Lifestyle" data-price="299">
+                        <span>Select this collection</span>
+                    </label>
                 </div>
             </div>
         </div>
+        <section class="checkout-panel" id="buy" aria-labelledby="checkout-title">
+            <div>
+                <p class="our-product">Buy together</p>
+                <h2 class="item-title" id="checkout-title">Checkout</h2>
+                <p class="checkout-note">Choose one or more collections, then review your order. Prices are starting-price estimates.</p>
+            </div>
+            <div class="checkout-details">
+                <label>
+                    Your name
+                    <input type="text" name="customerName" autocomplete="name" placeholder="Enter your name" required>
+                </label>
+                <label>
+                    Email
+                    <input type="email" name="customerEmail" autocomplete="email" placeholder="Enter your email" required>
+                </label>
+                <label>
+                    Phone
+                    <input type="tel" name="customerPhone" autocomplete="tel" placeholder="Enter your phone number" required>
+                </label>
+            </div>
+            <div class="order-summary" aria-live="polite">
+                <h3>Order summary</h3>
+                <ul id="selected-products">
+                    <li class="empty-selection">No collections selected yet.</li>
+                </ul>
+                <p class="checkout-total">Estimated subtotal: <output id="checkout-total">₹0</output></p>
+                <p class="checkout-disclaimer">Final prices may vary by item. This preview does not submit an order or take payment.</p>
+            </div>
+            <button class="buy-btn checkout-submit" type="submit">Review order</button>
+            <p class="checkout-status" id="checkout-status" role="status" aria-live="polite"></p>
+        </section>
+        </form>
     </div>
+        
 </body>
 </html>
