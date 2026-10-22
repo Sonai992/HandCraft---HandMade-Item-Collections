@@ -173,8 +173,12 @@
 
             confirmOrder.addEventListener('click', () => {
                 orderSendOptions.hidden = false;
-                checkoutStatus.textContent = 'Your order is confirmed. Choose WhatsApp or email in the order review to send it to the seller.';
+                checkoutStatus.textContent = 'Your order details are ready. Choose WhatsApp or email in the order review to send them to the seller.';
                 orderSendOptions.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            });
+
+            emailOrderLink.addEventListener('click', () => {
+                checkoutStatus.textContent = 'Your email app should open with the order addressed to the seller. Press Send in that app to submit it.';
             });
 
             checkoutReview.addEventListener('close', () => {

@@ -166,16 +166,18 @@
             <button class="review-close" id="close-order-review" type="button" aria-label="Close order review">&times;</button>
         </div>
         <p class="review-intro">Check your order details before confirming.</p>
-                <pre class="review-order-details" id="review-order-details"></pre>
-                <div class="review-actions">
-                    <button class="buy-btn checkout-submit" id="confirm-order" type="button">Confirm order</button>
-                    <button class="review-edit" id="edit-order" type="button">Back to edit</button>
-                </div>
-                <div class="order-send-options" id="order-send-options" hidden>
-                    <p>Your order is ready. Choose how you want to send it to the seller:</p>
-                    <a class="buy-btn send-order-link" id="whatsapp-order-link" href="#" target="_blank" rel="noopener noreferrer">Send via WhatsApp</a>
-                    <a class="buy-btn send-order-link" id="email-order-link" href="#">Send via email</a>
-                </div>
+        <pre class="review-order-details" id="review-order-details"></pre>
+        <div class="review-actions">
+            <button class="buy-btn checkout-submit" id="confirm-order" type="button">Confirm order</button>
+            <button class="review-edit" id="edit-order" type="button">Back to edit</button>
+        </div>
+        <section class="order-send-options" id="order-send-options" aria-label="Send your order" hidden>
+            <p class="send-order-note">Your order message is ready. Choose an app to send it to the seller. Email opens your default mail app; press <strong>Send</strong> there to submit it.</p>
+            <div class="send-order-actions">
+                <a class="buy-btn send-order-link" id="whatsapp-order-link" href="#" target="_blank" rel="noopener noreferrer">Send via WhatsApp</a>
+                <a class="buy-btn send-order-link" id="email-order-link" href="#" aria-label="Email order to aniketsonai309@gmail.com">Send via email</a>
+            </div>
+        </section>
     </dialog>
         
 </body>

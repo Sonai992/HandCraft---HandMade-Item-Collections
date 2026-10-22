@@ -507,11 +507,14 @@ button:active {
   overflow-wrap: anywhere;
 }
 .review-actions,
-.order-send-options{
+.send-order-actions{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 12px;
+}
+.review-actions{
+  justify-content: flex-end;
 }
 .review-edit{
   margin: 0;
@@ -520,11 +523,16 @@ button:active {
   border: 1px solid var(--border-default);
 }
 .order-send-options{
-  padding-top: 14px;
+  display: grid;
+  gap: 14px;
+  padding-top: 16px;
   border-top: 1px solid var(--border-default);
   color: var(--text-body);
   font-family: var(--font-body);
   font-size: 0.9rem;
+}
+.send-order-note{
+  line-height: 1.5;
 }
 .send-order-link{
   display: inline-flex;
@@ -544,11 +552,11 @@ button:active {
     padding: 18px;
   }
   .review-actions,
-  .order-send-options{
+  .send-order-actions{
     align-items: stretch;
   }
   .review-actions button,
-  .order-send-options .send-order-link{
+  .send-order-actions .send-order-link{
     justify-content: center;
     width: 100%;
   }
