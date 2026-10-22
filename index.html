@@ -128,6 +128,23 @@
                     Phone
                     <input type="tel" name="customerPhone" autocomplete="tel" placeholder="Enter your phone number" required>
                 </label>
+                <label>
+                    Delivery address
+                    <textarea name="deliveryAddress" autocomplete="street-address" placeholder="House number, street, and area" required></textarea>
+                </label>
+                <label>
+                    City, state, and PIN code
+                    <input type="text" name="deliveryLocation" autocomplete="postal-code" placeholder="City, State, PIN code" required>
+                </label>
+                <label>
+                    Preferred contact method
+                    <select name="contactMethod" required>
+                        <option value="">Choose a contact method</option>
+                        <option value="Phone">Phone</option>
+                        <option value="Email">Email</option>
+                        <option value="WhatsApp">WhatsApp</option>
+                    </select>
+                </label>
             </div>
             <div class="order-summary" aria-live="polite">
                 <h3>Order summary</h3>
@@ -135,13 +152,31 @@
                     <li class="empty-selection">No collections selected yet.</li>
                 </ul>
                 <p class="checkout-total">Estimated subtotal: <output id="checkout-total">₹0</output></p>
-                <p class="checkout-disclaimer">Final prices may vary by item. This preview does not submit an order or take payment.</p>
+                <p class="checkout-disclaimer">Prices are estimates; final item prices will be confirmed with you.</p>
             </div>
             <button class="buy-btn checkout-submit" type="submit">Review order</button>
             <p class="checkout-status" id="checkout-status" role="status" aria-live="polite"></p>
         </section>
         </form>
     </div>
+
+    <dialog class="checkout-review" id="checkout-review" aria-labelledby="review-title">
+        <div class="review-heading">
+            <h2 id="review-title">Review your order</h2>
+            <button class="review-close" id="close-order-review" type="button" aria-label="Close order review">&times;</button>
+        </div>
+        <p class="review-intro">Check your order details before confirming.</p>
+                <pre class="review-order-details" id="review-order-details"></pre>
+                <div class="review-actions">
+                    <button class="buy-btn checkout-submit" id="confirm-order" type="button">Confirm order</button>
+                    <button class="review-edit" id="edit-order" type="button">Back to edit</button>
+                </div>
+                <div class="order-send-options" id="order-send-options" hidden>
+                    <p>Your order is ready. Choose how you want to send it to the seller:</p>
+                    <a class="buy-btn send-order-link" id="whatsapp-order-link" href="#" target="_blank" rel="noopener noreferrer">Send via WhatsApp</a>
+                    <a class="buy-btn send-order-link" id="email-order-link" href="#">Send via email</a>
+                </div>
+    </dialog>
         
 </body>
 </html>
